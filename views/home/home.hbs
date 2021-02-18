@@ -2,12 +2,10 @@
 {{#if isLoggedIn}}
 
     <div class="container">
-      
-
-        <section class="notifications">
-            <p class="notification-message">Message...</p>
-        </section>
-
+        {{#if error}}
+      {{> message}}
+      {{else}}
+      {{/if}}
         <main>
             <h1 class="text-center">Courses</h1>
             <section>
@@ -73,9 +71,11 @@
     {{else}}
      <div class="container">
         
-        <section class="notifications">
-            <p class="notification-message">Message...</p>
-        </section>
+        {{#if error}}
+      {{> message}}
+      {{else}}
+      {{/if}}
+        
 
         <main>
             <div class="jumbotron jumbotron-fluid">
