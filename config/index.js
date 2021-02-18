@@ -2,7 +2,7 @@ const env = process.env.NODE_ENV || 'development';
 
 const config = {
     development: {
-        port:process.env.PORT || 9999,
+        port:process.env.PORT || 9000,
         dbUrl: 'mongodb://localhost:27017/Tutorials',
         cookie: 'x-auth-token',
         secret: 'SuperSecretSecret',

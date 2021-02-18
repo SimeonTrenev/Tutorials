@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     const { Schema, model: Model } = mongoose;
-    const { String, ObjectId, Number, Boolean, Date } = Schema.Types;
+    const { String, ObjectId, Boolean, Date } = Schema.Types;
 
     const courseSchema = new Schema({ 
         title: {
