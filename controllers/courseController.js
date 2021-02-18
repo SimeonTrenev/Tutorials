@@ -7,12 +7,38 @@ module.exports = {
             Course.find({})
             .lean()
             .then(courses => {
-            res.render('./home/home.hbs', courses)
+            res.render('./home/home.hbs',{
+                courses
+            })
             })
             .catch(err => console.log(err))
         },
         create(req, res, next){
             res.render('./course/create.hbs')
+        },
+        details(req, res, next) {
+            Course.findOne({_id: req.params.courseId})
+            .lean()
+            .then(courses => {
+                res.render('./course/details.hbs',{...courses})
+            })
+            .catch(err => console.log(err))
+        },
+        edit(req, res, next){
+            Course.findOne({ _id: req.params.courseId })
+            .lean()
+            .then(courses => {
+                res.render('./course/edit.hbs',
+                    courses
+                )
+            })
+            .catch(err => console.log(err))
+        },
+        delete(req, res, next){
+
+        },
+        enrol(req, res, next){
+
         }
     },
     post: {

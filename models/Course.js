@@ -19,7 +19,8 @@ module.exports = (mongoose) => {
         },
         isPublic: {
             type: Boolean,
-            default: false
+            default: false,
+            checked: false
         },
         createdAt: {
             type: Date || String,
